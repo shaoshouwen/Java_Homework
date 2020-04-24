@@ -2,7 +2,7 @@ package  club.banyuan.animal;
 
 public class Dog {
 
-  String name;
+public  String name;
 
 public  String getName() {
     return name;
