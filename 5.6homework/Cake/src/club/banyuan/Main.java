@@ -1,45 +1,68 @@
 package club.banyuan;
 
-public class Main {
-    public static void main(String[] args) {
-        Cake[] cakeArray = new Cake[10];
-        //前五个蛋糕是OrderCake类，称重卖
-        //后五个蛋糕是ReadyMadeCake类，按数量卖
-
-        //输入Cake对象的数据并将其存储到数组中
-        for(int i = 0; i < 5; i++){
-            Cake cake = new OrderCake(i + 1, 20, 0.1 * (i + 1));
-            cakeArray[i] = cake;
+public class Main{
+    public static Cake[] CreateCake(){
+        Cake[] cakeArr = new Cake[10];
+        cakeArr[0] = new OrderCake(1, 8, 3);
+        cakeArr[1] = new OrderCake(2,6 , 5);
+        cakeArr[2] = new OrderCake(3, 20, 4);
+        cakeArr[3] = new OrderCake(4, 12, 2);
+        cakeArr[4] = new OrderCake(5, 7, 6);
+        cakeArr[5] = new ReadyMadeCake(6, 10, 7);
+        cakeArr[6] = new ReadyMadeCake(7, 11, 9);
+        cakeArr[7] = new ReadyMadeCake(8, 12, 2);
+        cakeArr[8] = new ReadyMadeCake(9, 13, 4);
+        cakeArr[9] = new ReadyMadeCake(10, 14, 5);
+        return cakeArr;
+    }
+    public static void AllCakePrice(Cake[] cakeArr){
+        double AllCakesPrice = 0;
+        for (int i = 0; i < cakeArr.length; i++) {
+            AllCakesPrice += cakeArr[i].calcPrice();
         }
-        for(int i = 5; i < 10;i++){
-            Cake cake = new ReadyMadeCake(i + 1, 2, 1);
-            cakeArray[i] = cake;
-        }
+        System.out.println("所有蛋糕的总价为"+AllCakesPrice);
+    }
 
-        //显示所有蛋糕的总价
-        double overallPrice = 0;
-        for(int i = 0; i < 10; i++){
-            overallPrice = overallPrice + cakeArray[i].calcPrice();
+    public static void showReadyMadeCakePriceAndQuantity(Cake[] cakeArr){
+        double AllReadyMadeCakePrice = 0;
+        int AllReadyMadeCakeQuantity = 0;
+        for (int i = 0; i <cakeArr.length ; i++) {
+            if(cakeArr[i] instanceof OrderCake)
+                continue;
+            AllReadyMadeCakePrice += cakeArr[i].calcPrice();
+            AllReadyMadeCakeQuantity += ((ReadyMadeCake)cakeArr[i]).getQuantity();
         }
-        System.out.println("所有蛋糕的总价为" + overallPrice);
+        System.out.println("ReadyMadeCake蛋糕的总价是"+AllReadyMadeCakePrice+",总数是"+AllReadyMadeCakeQuantity);
+    }
 
-        //显示ReadyMadeCake蛋糕的总价和数量之和
-        double overallPriceOfReadyMadeCake = 0;
-        for(int i = 5; i < 10; i++){
-            overallPriceOfReadyMadeCake = overallPriceOfReadyMadeCake + cakeArray[i].calcPrice();
-        }
-        System.out.println("ReadyMadeCake蛋糕的总价为" + overallPriceOfReadyMadeCake + "  " + "总数量为5");
 
-        //显示最高价格出售的蛋糕的信息
-        Cake highestPriceCake = cakeArray[0];
-        for(int i = 1; i < 10; i++){
-            if(cakeArray[i].calcPrice() > highestPriceCake.calcPrice()){
-                highestPriceCake = cakeArray[i];
+    public static void showHighestCakeInformation(Cake[] cakeArr){
+        int temp = 0;
+        for (int i = 0; i <cakeArr.length ; i++) {
+            if(cakeArr[temp].calcPrice() <=cakeArr[i].calcPrice())
+            {
+                temp = i;
             }
         }
-        System.out.println("价格最高的蛋糕：");
-        System.out.println("编号:  " + highestPriceCake.id);
-        System.out.println("售价： " + highestPriceCake.calcPrice());
+        if(cakeArr[temp] instanceof OrderCake){
+            System.out.println("id:"+((OrderCake)cakeArr[temp]).id);
 
+            System.out.println("price:"+((OrderCake)cakeArr[temp]).price);
+
+            System.out.println("weightInKG:"+((OrderCake)cakeArr[temp]).getWeightInKG());
+        }else{
+            System.out.println("id:"+((ReadyMadeCake)cakeArr[temp]).id);
+
+            System.out.println("price:"+((ReadyMadeCake)cakeArr[temp]).price);
+
+            System.out.println("quantity:"+((ReadyMadeCake)cakeArr[temp]).getQuantity());
+        }
     }
+public static void main(String[] args){
+    Cake[] cakeArr = CreateCake();
+    AllCakePrice(cakeArr);
+    showReadyMadeCakePriceAndQuantity(cakeArr);
+    showHighestCakeInformation(cakeArr);
+
+}
 }
