@@ -15,37 +15,26 @@ public class DataSet {
     }
 
     public DataSet() {
-        sum = 0;
-        count = 0;
-        maximum = null;
+
     }
 
     // TODO： 重载方法，使得Contry统计 DataSetTester 运行成功
-    public void add(Country x) {
-        sum = sum + x.getMeasure();
-        if (count == 0 || ((Country) maximum).getMeasure() < x.getMeasure()) {
+    public void add(Object x) {
+        sum = sum + measurer.measure(x);
+        if (count == 0 || measurer.measure(maximum) < measurer.measure(x)) {
             maximum = x;
         }
         count++;
-
     }
 
-    public void add(Rectangle x) {
-        sum = sum + measurer.measure(x);//sum此时为面积和
-        if (count == 0 || measurer.measure(maximum) < measurer.measure(x)) {
-            maximum = x;//maximum为最大面积的长方形
+    public void add(Measurable x) { //父类的引用指向子类的对象
+        sum = sum + x.getMeasure(); //调用子类重写的方法
+        Measurable max = (Measurable) maximum;
+        if (count == 0 || x.getMeasure() > max.getMeasure()) {
+            maximum = x;
         }
         count++;
     }
-
-    public void add(String x) {
-        sum = sum + measurer.measure(x);//sum此时为字符串长度和
-        if (count == 0 || measurer.measure(maximum) < measurer.measure(x)) {
-            maximum = x;//maximum为最大长度的字符串
-        }
-        count++;
-    }
-
 
     public double getAverage() {
         // TODO: Check divide by zero. Compute the average value.

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e09e4581-7ff4-462d-8c62-55b1a36a3bae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/club/banyuan/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/banyuan/Country.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/club/banyuan/DataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/banyuan/DataSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/club/banyuan/DataSetTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/club/banyuan/DataSetTester.java" afterDir="false" />
@@ -92,6 +93,7 @@
       <updated>1589212874592</updated>
       <workItem from="1589212877313" duration="3307000" />
       <workItem from="1589216241210" duration="1320000" />
+      <workItem from="1589245660857" duration="1324000" />
     </task>
     <servers />
   </component>
