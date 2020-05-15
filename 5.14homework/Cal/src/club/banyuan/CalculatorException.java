@@ -16,19 +16,5 @@ public class CalculatorException extends Exception {
     }
 }
 
-class IllegalInputException extends CalculatorException {
-    public IllegalInputException(String message) {
-        super(message);
-    }
-}
 
-class QuitException extends CalculatorException {
-
-
-}
-
-class DivideByZeroException extends CalculatorException {
-
-
-}
 
