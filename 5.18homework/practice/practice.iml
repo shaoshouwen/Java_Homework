@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Pairs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DataSet" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="5.11homework" />
+    <orderEntry type="module" module-name="5.8homework" />
+    <orderEntry type="module" module-name="ListAppendWithTimer" />
+    <orderEntry type="module" module-name="4.30homework" />
+    <orderEntry type="module" module-name="practice1" />
+    <orderEntry type="module" module-name="Cake" />
+    <orderEntry type="module" module-name="DataSetRefine" />
+    <orderEntry type="module" module-name="practice2" />
+    <orderEntry type="module" module-name="5.14homework" />
+    <orderEntry type="module" module-name="5.13homework" />
+    <orderEntry type="module" module-name="Recommand" />
+    <orderEntry type="module" module-name="5.9homework" />
+    <orderEntry type="module" module-name="Points" />
+    <orderEntry type="module" module-name="5.7homework" />
+    <orderEntry type="module" module-name="4.23homework" />
+    <orderEntry type="module" module-name="5.19homework" />
+  </component>
+</module>
