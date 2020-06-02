@@ -16,7 +16,7 @@ public class Counter {
   /**
    * 将counter每次加1，加10次，时不时地休息一下。
    */
-  public synchronized void count() {
+  public synchronized  void count() {
     int count = 0;
     try {
       while (count < 10) {
@@ -36,7 +36,7 @@ public class Counter {
   public int get() {
     return value;
   }
-
+y
   /**
    * @return n+1
    * @throws InterruptedException
