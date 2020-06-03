@@ -9,10 +9,10 @@ import java.util.Scanner;
 public class UdpClient {
 
   public static void main(String[] args) throws IOException {
+    boolean isRunning = true;
+    Scanner sc = new Scanner(System.in);
     DatagramSocket ds = new DatagramSocket();
-    while (true) {
-      Scanner sc = new Scanner(System.in);
-
+    while (isRunning) {
       System.out.println("请上传：");
       String word = sc.nextLine();
       byte[] bytes = word.getBytes();
@@ -21,7 +21,6 @@ public class UdpClient {
           10000);
       ds.send(dp);
     }
-
-
+      ds.close();
   }
 }
