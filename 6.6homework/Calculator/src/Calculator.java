@@ -9,11 +9,11 @@ public class Calculator {
     boolean vaule = true;
     while (vaule) {
       System.out.println("请输入表达式:");
-      String regex = "(^[0-9]\\.[0-9]*) <([+-\\\\*/%])> ([0-9]\\.[0-9]*$)";
+      String regex = "(^[0-9].[0-9]*) ([+\\-*/%]) ([0-9].[0-9]*$)";
       String test = scanner.nextLine();
       Pattern pattern = Pattern.compile(regex);
       Matcher matcher = pattern.matcher(test);
-//    System.out.println(matcher.group(1));
+
       if (matcher.find()) {
 
         double sum, dif, pro, quo, mod = 0;
