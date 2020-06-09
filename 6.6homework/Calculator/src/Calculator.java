@@ -40,11 +40,10 @@ public class Calculator {
             break;
 
         }
-      } else if("quit".equals(test)){
-        vaule=false;
+      } else if ("quit".equals(test)) {
+        vaule = false;
         System.out.println("退出");
-      }
-      else {
+      } else {
         System.out.println("输入不合法");
       }
     }
