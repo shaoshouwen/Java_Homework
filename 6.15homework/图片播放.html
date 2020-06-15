@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片播放</title>
+    <style>
+        *{
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            margin: 150px auto;
+            overflow: hidden;
+            
+        }
+
+        .picture {
+            position: absolute;
+            width: 500%;
+            animation: slideshow 5s linear infinite normal;
+        }
+        img{
+            height: 300px;
+            width: 500px;
+            float: left;
+        }
+        ul{
+            list-style: none;
+        }
+        /* tr{
+            width: 500%;
+        } */
+        
+
+        @keyframes slideshow {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: -400%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="picture">
+            <ul>
+                <li><img src="/Users/edz/Desktop/1.jpg" alt="1"></li>
+                <li><img src="/Users/edz/Desktop/2.jpg" alt="2"></li>
+                <li><img src="/Users/edz/Desktop/3.jpg" alt="3"></li>
+                <li><img src="/Users/edz/Desktop/4.jpg" alt="4"></li>
+                <li><img src="/Users/edz/Desktop/1.jpg" alt="1"></li>
+            </ul>
+            <!-- <table>
+                <tr>
+                    <td><img src="/Users/edz/Desktop/1.jpg" alt="1"></td>
+                    <td><img src="/Users/edz/Desktop/2.jpg" alt="2"></td>
+                    <td><img src="/Users/edz/Desktop/3.jpg" alt="3"></td>
+                    <td><img src="/Users/edz/Desktop/4.jpg" alt="4"></td>
+                    <td><img src="/Users/edz/Desktop/1.jpg" alt="1"></td>
+                </tr>
+            </table> -->
+            
+            
+            
+        </div>
+
+    </div>
+
+</body>
+
+</html>
