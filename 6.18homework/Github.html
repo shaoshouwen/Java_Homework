@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+        }
+
+        .head {
+            position: relative;
+            width: 100%;
+            height: 53px;
+            background-color: #24292e;
+        }
+
+        .main {
+            width: 100%;
+            height: calc(100% - 53px);
+            /* background-color: blue; */
+            background-color: rgb(225, 228, 232);
+
+        }
+
+        .left {
+            height: 100%;
+            width: 350px;
+            background-color: #fff;
+            float: left;
+        }
+
+        .mid {
+            position: relative;
+
+            height: 100%;
+            margin-left: 349px;
+            margin-right: 350px;
+            background-color: rgb(225, 228, 232);
+        }
+
+        .right {
+            height: 100%;
+            width: 350px;
+            background-color: rgb(225, 228, 232);
+            float: right;
+        }
+
+        .mid-footer {
+            position: absolute;
+            height: 160px;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(225, 228, 232);
+            float: left;
+        }
+
+        .flush {
+            position: absolute;
+            float: left;
+            left: 16px;
+            background-color: white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            top: 50%;
+            transform: translateY(-50%);
+            /* float: left; */
+        }
+
+        .head-input {
+            width: 300px;
+            height: 28px;
+            background-color: hsla(0, 0%, 100%, .125);
+            
+            margin-top: 12.5px;
+            border-radius: 5px;
+            float: left;
+
+        }
+
+        .input1 {
+            
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 0;
+            width: 273px;
+            height: 28px;
+            padding-bottom: 0;
+            font-size: inherit;
+            color: inherit;
+            background: rgba(0, 0, 0, 0);
+            border: 0;
+            float: left;
+        }
+
+        .head-li {
+            position: relative;
+            float: left;
+            left: 64px;
+            list-style: none;
+            line-height: 53px;
+            margin-right: 16px;
+            font-weight: 600;
+            color: #fff;
+            font-size: 14px;
+            border: 0;
+
+
+        }
+
+        .img2 {
+            position: absolute;
+            right: 8px;
+            float: left;
+            transform: translateY(20%);
+        }
+
+        .head-right-li {
+            list-style: none;
+            color: rgb(225, 228, 232);
+            float: right;
+            margin-right: 16px;
+            top: 12.5px;
+        }
+
+        .main-left-top {
+            position: absolute;
+            width: 301px;
+            height: 218px;
+            /* margin: 0 auto; */
+            left: 24px;
+            border: 1px solid #e1e4e8 !important;
+            clip: rect(1px 302px 302px 1px);
+        }
+
+        .main-left-top-1 {
+            width: 100%;
+            height: 170px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            float: left;
+            font-size: 14px;
+            font-weight: 600;
+
+        }
+
+        .input2 {
+            margin-top: 8px;
+            margin-bottom: 16px;
+            border: 1px solid rgb(209, 213, 218);
+            box-shadow: inset 0 1px 2px rgba(27, 31, 35, .075);
+            border-radius: 3px;
+            float: left;
+            width: 289px;
+            height: 34px;
+            padding-left: 8px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .main-link {
+            width: 100%;
+            height: 84px;
+            float: left;
+        }
+
+        .main-link1 {
+            width: 100%;
+            height: 29px;
+            float: left;
+        }
+
+        .main-link-a {
+            float: left;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0366d6;
+            margin-left: 24px;
+
+        }
+
+        .main-left-down {
+            position: relative;
+            top: 220px;
+            left: 24px;
+            width: 301px;
+            height: 164px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            float: left;
+        }
+
+        .h2 {
+            font-size: 14px !important;
+            margin-bottom: 4px !important;
+
+        }
+
+        .h {
+            width: 301px;
+            height: 84px;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #24292e;
+            margin-bottom: 10px;
+
+        }
+
+        .main-left-down-a {
+            float: left;
+            padding: 3px 10px 3px 10px;
+            width: 143px;
+            height: 20px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #0366d6;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            border: 1px solid rgba(27, 31, 35, .2);
+            border-radius: .25em;
+            line-height: 20px;
+        }
+
+        .main-left-down-a:hover {
+            background-color: #0366d6;
+            color: #fff;
+        }
+        .mid-0{
+            max-width: 706px;
+            padding-top: 32px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .mid-top {
+            min-height: 232px;
+            max-width: 706px;
+            border: 1px solid #d1d5da;
+            border-radius: 3px;           
+            background-color: #fff;
+        }
+
+        .mid-top-1 {
+            position: relative;
+            padding-top: 32px;
+            padding-left: 32px;
+            /* height: 60px; */
+            max-width: 768px;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.25 !important;
+            margin-bottom: 8px;
+            float: left;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        .mid-top-2 {
+            position: relative;
+            font-size: 16px;
+            /* width: 640px; */
+            max-width: 640px;
+
+            padding-left: 32px;
+            float: left;
+            /* height: 48px; */
+            margin-bottom: 10px;
+            line-height: 1.5 !important;
+
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+
+
+        }
+
+        .mid-top-a {
+            position: relative;
+            float: left;
+            left: 32px;
+            padding: 6px 12px 6px 12px;
+            /* width: 101px; */
+            height: 20px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #0366d6;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            border: 1px solid rgba(27, 31, 35, .2);
+            border-radius: .25em;
+            line-height: 20px;
+            margin-top: 8px;
+        }
+
+        .mid-top-a:hover {
+            background-color: #0366d6;
+            color: #fff;
+        }
+
+        /* .mid-mid {
+            position: relative;
+            margin: 0 auto;
+            height: 52px;
+            width: 706px;
+            border: 1px solid #d1d5da;
+            float: left;
+            margin-top: 56px;
+            left: 16px;
+            font-size: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+
+        } */
+        .mid-mid{
+            /* max-width: 740px; */
+            margin: 0 auto;
+            padding-left: 16px;
+            margin-top: 16px;
+            font-size: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+
+        }
+        .mid-footer-0{
+            /* position: relative; */
+            margin: 0 auto;
+            max-width: 1440px;
+            padding-left: 16px;
+            height: 100%;
+        }
+        .mid-footer-01{
+            width: 30%;
+            height: 100%;
+            /* display: block; */
+            float: left;
+        }
+
+        .mid-footer-1 {
+            position: relative;
+            float: left;
+            width: 24px;
+            height: 24px;
+            padding-right: 8px;
+            left: 16px;
+        }
+        .mid-footer-02{
+            height: 100%;
+            width: 70%;
+            /* display: block; */
+            float: left;
+        }
+
+        .mid-footer-2 {
+            position: relative;
+            float: left;
+            font-size: 12px;
+            left: 16px;
+            
+        }
+
+
+        .mid-footer-3 {
+            position: relative;
+            width: 33%;
+            height: 160px;
+            left: 80px;
+            /* left: px; */
+            float: left;
+        }
+
+        /* .mid-footer-li{
+            position: relative;
+            left:  148px;
+        } */
+        .mid-footer-li a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #24292e;
+        }
+
+        .right-top {
+            width: 283.75px;
+            height: 21px;
+            margin-top: 32px;
+
+        }
+
+        .right-mid {
+            font-size: 12px;
+            margin-top: 24px;
+
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+
+        .right-mid>a {
+
+            text-decoration: none;
+            font-weight: 600px;
+            color: #24292e;
+        }
+
+        .right-mid>p {
+
+            color: rgb(88, 96, 105);
+        }
+
+        .right-miid-1 {
+            display: inline-block;
+            width: 200px;
+            height: 12px;
+            font-size: 12px;
+            margin-top: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            color: rgb(88, 96, 105);
+        }
+
+        .repo-language-color {
+            display: inline-block;
+            margin-top: 18px;
+            width: 12px;
+            height: 12px;
+            background-color: #b07219;
+            border-radius: 50%;
+
+        }
+
+        .right-mid-1-text {
+            display: inline-block;
+        }
+
+        .right-mid1 {
+
+            width: 284px;
+            height: 92px;
+            margin-top: 12px;
+            border-top: 1px solid black;
+
+        }
+
+        .right-mid1>p {
+            margin-top: 22px;
+        }
+
+        .right-mid2 {
+
+            width: 284px;
+            height: 401px;
+            margin-top: -8px;
+            border-top: 1px solid black;
+
+        }
+
+        .right-mid2>p {
+            margin-top: 22px;
+        }
+
+        .right-mid2>a {
+            position: absolute;
+            margin-top: 20px;
+            text-decoration: none;
+            color: rgb(88, 96, 105);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="flush">
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1592320016268&di=675d72272ca81a036256c442279d9c39&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F86%2F44%2F4056eb5f135855d.jpg"
+                    alt="ccc" style="width: 32px; height: 32px;">
+            </div>
+            <div>
+                <div class="head-li">
+                    <div class="head-input">
+                        <input type="text" class="input1" name="" placeholder="Search or jump to...">
+                        <div class="img2"><img src="./Github_files/search-key-slash.svg" alt="11" style="width: 19px; height: 20px; float: right;">
+                        </div>
+                    </div>
+
+                </div>
+                <ul class="head-li">Pull requests</ul>
+                <ul class="head-li">Issues</ul>
+                <ul class="head-li">Marketplace</ul>
+                <ul class="head-li">Explore</ul>
+            </div>
+            <ul>
+                <li class="head-right-li">1</li>
+                <li class="head-right-li">2</li>
+                <li class="head-right-li">3</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="left">
+                <div class="main-left-top">
+                    <div class="main-left-top-1">Repositories
+                        <button style="float: right; background-color: rgb(40, 167, 69);; width: 67.17px;height: 28px;  border-radius: 3px; border: 0;"><a href="file:///Users/edz/Downloads/ccc" style="text-decoration: none;color: #fff;font-size: 12px;
+                            line-height: 20px;">New</a></button>
+
+                        <input type="text" class="input2" placeholder="Find a ropository...">
+                        <div class="main-link">
+                            <div class="main-link1">
+                                <a href="file:///Users/edz/Downloads/ccc" class="main-link-a">shaoshouwen/Java_Homework</a>
+                            </div>
+                            <div class="main-link1">
+                                <a href="file:///Users/edz/Downloads/ccc" class="main-link-a">shaoshouwen/note_book</a>
+                            </div>
+                            <div class="main-link1">
+                                <a href="file:///Users/edz/Downloads/ccc" class="main-link-a">shaoshouwen/shengtang-se</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-left-down">
+                    <h2 class="h2">Working with a team?</h2>
+                    <div class="h">GitHub is built for collaboration. Set up an organization to improve the way your
+                        team works together, and get access to more features.
+                    </div>
+                    <a href="file:///Users/edz/Downloads/ccc" class="main-left-down-a">Creat an organization</a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="right-top">
+                    <h5>Explore repositories</h5>
+                </div>
+                <div class="right-mid">
+                    <a href="file:///Users/edz/Downloads/github.html">6ALLIKA/jv-cinema</a>
+
+                    <div class="right-mid-1">
+                        <div class="repo-language-color"></div>
+                        <div class="right-mid-1-text">Java</div>
+                    </div>
+                    <div class="right-mid1">
+                        <p>VBortnyk/cinema</p>
+                        <div class="right-mid-1">
+                            <div class="repo-language-color"></div>
+                            <div class="right-mid-1-text">Java</div>
+                        </div>
+                    </div>
+                    <div class="right-mid2">
+                        <p>hcsp/psvm-method-invoke-add-string</p>
+                        <p>Java basic practice for beginners.</p>
+                        <div class="right-mid-1">
+                            <div class="repo-language-color"></div>
+                            <div class="right-mid-1-text">Java</div>
+                        </div>
+                        <a href="file:///Users/edz/Downloads/github.html">Explore more-&gt;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mid">
+                <div class="mid-0">
+                    <div class="mid-top">
+                        <h2 class="mid-top-1">
+                            Discover interesting projects and people to populate your personal news feed.
+                        </h2>
+                        <p class="mid-top-2">Your news feed helps you keep up with recent activity on repositories you <a href="file:///Users/edz/Downloads/ccc" style="text-decoration: none;">watch</a> and people you <a href="file:///Users/edz/Downloads/ccc" style="text-decoration: none;">follow</a>.
+                        </p>
+                        <a href="file:///Users/edz/Downloads/ccc" class="mid-top-a">Explore GitHub</a>
+    
+                    </div>
+                    <div class="mid-mid">
+                        <p><strong style="font-size: 12px;font-weight: 600; padding-left: 16px; float: left;">ProTip!</strong>
+                            The feed shows you events from people you <a href="file:///Users/edz/Downloads/ccc" style="text-decoration: none;">follow</a> and repositories you <a href="file:///Users/edz/Downloads/ccc" style="text-decoration: none;">watch</a>.</p>
+    
+                        <a href="file:///Users/edz/Downloads/ccc" style="position: relative; float: left; padding-left: 16px; text-decoration: none; margin-top: 10px; color: black;">Subscribe
+                            to your news feed</a>
+                    </div>
+                </div>
+                
+                <div class="mid-footer">
+                    <div class="mid-footer-0">
+                        <div class="mid-footer-01">
+                            <div class="mid-footer-1">
+                                <svg height="24" style="float: left;" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="mid-footer-2">
+                                <span class="f6 text-gray-light">
+                                    © 2020 GitHub, Inc.
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="mid-footer-02">
+                            <ul class="mid-footer-3" style="list-style: none;">
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Blog</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">About</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Shop</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Contact</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">GitHub</a> </li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Pricing</a></li>
+                            </ul>
+                            <ul class="mid-footer-3" style="list-style: none;">
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">API</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Training</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Status</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Security</a></li>
+                            </ul>
+                            <ul class="mid-footer-3" style="list-style: none;">
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Terms</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Privacy</a></li>
+                                <li class="mid-footer-li"><a href="file:///Users/edz/Downloads/github.html">Help</a></li>
+        
+                            </ul>
+                        </div>
+                      
+                    </div>
+                    
+
+                </div>
+
+
+
+
+
+                <!-- <div class="mid-footer"></div> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
