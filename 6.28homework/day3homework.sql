@@ -305,7 +305,7 @@ VALUES (1, 700, 1200),
        (5, 3001, 9999);
 -- 取得每个部门最高薪水的人员名称
 select  deptno,max(sal) from emp group by deptno;
-select ename, emp.deptno from emp ,(select  deptno,max(sal) from emp group by deptno) ccc where emp.deptno = ccc.deptno;
+select ename, emp.deptno from emp where sal in (select max(sal) from emp group by deptno) ;
 -- 哪些人的薪水在部门的平均薪水之上
 
 select emp.ename from emp,(select emp.deptno e,avg(sal) a 
