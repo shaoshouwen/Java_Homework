@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
       UserDao userDao = new UserDaoImpl(JdbcUtils.getConnection());
       User loginUser = userDao.getLoginUser(loginName, password);
 
-      if (loginUser !=null){
+      if (loginUser.getLoginName() !=null){
         flag = true;
         System.out.println(loginUser);
       }
