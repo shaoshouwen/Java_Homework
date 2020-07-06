@@ -1,4 +1,6 @@
-<%@ page import="club.banyuan.entity.User" %><%--
+<%@ page import="club.banyuan.entity.User" %>
+<%@ page import="club.banyuan.entity.Order" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: edz
   Date: 2020/7/4
@@ -266,6 +268,22 @@
                     <td>未确认，未付款，未发货</td>
                     <td>取消订单</td>
                 </tr>
+                <%
+                    Object object2 = session.getAttribute("orderList");
+                    if(object2 != null){
+                        List<Order> orderList = (List<Order>)object2;
+                        for (Order order : orderList) {
+                            out.print("<tr>\n");
+                            out.print(" <td><font color=\"#ff4e00\">"+ order.getSerialNumber() +"</font></td>\n"
+                                    + "                    <td>"+ order.getCreateTime() +"</td>\n"
+                                    + "                    <td>￥"+  order.getCost() +"</td>\n"
+                                    + "                    <td>未确认，未付款，未发货</td>\n"
+                                    + "                    <td>取消订单</td>");
+                            out.print("</tr>\n");
+                        }
+                    }
+
+                %>
                 <tr>
                     <td><font color="#ff4e00">2015092823056</font></td>
                     <td>2015-09-26   16:45:20</td>
