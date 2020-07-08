@@ -28,15 +28,22 @@ public class RegistServlet extends HttpServlet {
     user.setPostcode(request.getParameter("postcode"));
     UserService userService = new UserServiceImpl();
     HttpSession session = request.getSession();
+    System.out.println(user);
     try {
-      String password = request.getParameter("password");
+//      String password = request.getParameter("password");
+      String agree = request.getParameter("agree");
+      if(agree !=null){
         int id = userService.regist(user);
         if (id > 0) {
-          request.getRequestDispatcher("index.jsp").forward(request, response);
+          request.getRequestDispatcher("Login.jsp").forward(request, response);
           System.out.println(id);
-        } else {
-          request.getRequestDispatcher("index2.jsp").forward(request, response);
         }
+        else {
+          request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+      }else {
+        request.getRequestDispatcher("Regist.jsp").forward(request,response);
+      }
     } catch (SQLException throwables) {
       throwables.printStackTrace();
     }

@@ -27,22 +27,26 @@ public class LoginServlet extends HttpServlet {
 //        调用service处理登录请求
     UserService userService = new UserServiceImpl();
     HttpSession session = request.getSession();
+
     try {
       User user = userService.login(username, password);
+      if (user != null && remember != null) {
+
+//        System.out.println(remember);
+//        System.out.println(111);
+        Cookie cookie = new Cookie("username", username);
+        cookie.setMaxAge(24 * 60 * 60); // 设置过期时间1天，以秒为单位
+        response.addCookie(cookie);// 保存cookie到客户端
+
+        cookie = new Cookie("password", password);
+        cookie.setMaxAge(24 * 60 * 60);
+        response.addCookie(cookie);
+
+      }
       if (user != null) {
-        if (remember != null) {
-//把用户名和密码存储到cookie里，下次可以直接登录
-          Cookie cookie = new Cookie("username", username);
-          cookie.setMaxAge(24 * 60 * 60); // 设置过期时间1天，以秒为单位
-          response.addCookie(cookie);// 保存cookie到客户端
-
-          cookie = new Cookie("password", password);
-          cookie.setMaxAge(24 * 60 * 60);
-          response.addCookie(cookie);
-        }
-
+        System.out.println(remember);
         session.setAttribute("user", user);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("itemslist.jsp").forward(request, response);
         return;
       }
     } catch (SQLException throwables) {

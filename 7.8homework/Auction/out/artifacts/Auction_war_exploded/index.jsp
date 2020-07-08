@@ -11,6 +11,9 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <a href="AdLogin.jsp">管理员登录</a>
+  <a href="Login.jsp">竞拍人登录</a>
+  <a href="Regist.jsp">竞拍人注册</a>
+
   </body>
 </html>
