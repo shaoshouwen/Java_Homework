@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <update id="modifyProduct" parameterType="Auction_item">
+  update auction_item set item_name = #{item_name},description = #{description} , start_time = #{start_time} , end_time = #{end_time} ,
+  starting_price = #{starting_price} , base_price = #{base_price} where id =#{id}
+    </update>
+
+    <insert id="insertProduct" parameterType="Auction_item">
+        insert into auction_item values (null,#{item_name},#{description},#{start_time},#{end_time},#{starting_price},#{base_price})
+    </insert>
+
+    <update id="deleteProduct" parameterType="id">
+        delete from auction_item where id = #{id}
+    </update>
+</mapper>

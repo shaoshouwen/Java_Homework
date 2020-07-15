@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+  <select id="getItemByMsg" resultType="Auction_item" parameterType="Auction_item">
+    select * from auction_item
+    <where>
+      <if test="item_name != null and item_name != '' ">
+        and item_name like #{item_name}
+      </if>
+      <if test="description !=null and description != ''">
+        and description like #{description}
+      </if>
+      <if test="start_time != null and start_time != ''">
+        and start_time = #{start_time}
+      </if>
+      <if test="end_time != null and end_time != ''">
+        and end_time = #{end_time}
+      </if>
+      <if test="starting_price != null and starting_price != ''">
+        and starting_price like #{starting_price}
+      </if>
+    </where>
+  </select>
+
+
+
+  <select id="getItemById" resultType="Auction_item" parameterType="int">
+    select * from auction_item where id = #{id}
+  </select>
+
+  <select id="getAllItem" resultType="Auction_item">
+    select * from auction_item
+  </select>
+</mapper>
